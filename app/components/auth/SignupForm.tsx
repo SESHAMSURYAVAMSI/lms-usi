@@ -13,12 +13,11 @@ type FormData = {
   email: string;
   mobile: string;
   country: string;
-  password: string;
+  qualificationOrAffiliation: string;
 };
 
 type FormErrors = Partial<Record<keyof FormData, string>>;
-const BACKEND_BASE_URL = process.env.NEXT_PUBLIC_BACKEND_BASE_URL || 'http://localhost:5000';
-
+const BACKEND_BASE_URL = process.env.NEXT_PUBLIC_BACKEND_BASE_URL || "http://localhost:5000";
 
 export function SignupForm() {
   const router = useRouter();
@@ -28,7 +27,7 @@ export function SignupForm() {
     email: "",
     mobile: "",
     country: "",
-    password: "",
+    qualificationOrAffiliation: "",
   });
 
   const [agree, setAgree] = useState(false);
@@ -67,66 +66,56 @@ export function SignupForm() {
 
     if (!form.country.trim()) newErrors.country = "Country is required.";
 
-    if (!form.password.trim()) newErrors.password = "Password is required.";
-    else if (
-      !/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,64}$/.test(form.password)
-    )
-      newErrors.password =
-        "Must include uppercase, lowercase, number & special character.";
+    if (!form.qualificationOrAffiliation.trim())
+      newErrors.qualificationOrAffiliation =
+        "Qualification or Affiliation details are required.";
 
     return newErrors;
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-  e.preventDefault();
-  const validationErrors = validate();
-  if (Object.keys(validationErrors).length > 0) {
-    setErrors(validationErrors);
-    return;
-  }
-
-  if (!agree) {
-    alert("Please accept Terms & Conditions before signing up.");
-    return;
-  }
-
-  setErrors({});
-  
-  try {
-    const response = await fetch(`${BACKEND_BASE_URL}/auth/signup`, {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json',
-  },
-  body: JSON.stringify(form),
-});
-
-
-    const data = await response.json();
-
-    if (response.ok) {
-      // Store token and user data in localStorage or context
-      localStorage.setItem('token', data.token);
-      localStorage.setItem('user', JSON.stringify(data.user));
-      
-      alert("Signup successful!");
-      router.push("/login");
-    } else {
-      // Handle error responses
-      if (response.status === 400) {
-        alert(`Validation error: ${data.error}`);
-      } else if (response.status === 409) {
-        alert(`Signup failed: ${data.error}`);
-      } else {
-        alert("Signup failed. Please try again.");
-      }
+    e.preventDefault();
+    const validationErrors = validate();
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+      return;
     }
-  } catch (error) {
-    console.error('Signup error:', error);
-    alert("Network error. Please check your connection and try again.");
-  }
-};
 
+    if (!agree) {
+      alert("Please accept Terms & Conditions before signing up.");
+      return;
+    }
+
+    setErrors({});
+
+    try {
+      const response = await fetch(`${BACKEND_BASE_URL}/auth/signup`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        localStorage.setItem("token", data.token);
+        localStorage.setItem("user", JSON.stringify(data.user));
+        alert("Signup successful!");
+        router.push("/login");
+      } else {
+        if (response.status === 400) {
+          alert(`Validation error: ${data.error}`);
+        } else if (response.status === 409) {
+          alert(`Signup failed: ${data.error}`);
+        } else {
+          alert("Signup failed. Please try again.");
+        }
+      }
+    } catch (error) {
+      console.error("Signup error:", error);
+      alert("Network error. Please check your connection and try again.");
+    }
+  };
 
   return (
     <div className="flex flex-col md:flex-row w-full max-w-3xl mx-auto bg-white rounded-2xl shadow-lg">
@@ -150,9 +139,7 @@ export function SignupForm() {
               value={form.prefix}
               onChange={handleChange}
             />
-            {errors.prefix && (
-              <p className="text-sm text-red-600 mt-1">{errors.prefix}</p>
-            )}
+            {errors.prefix && <p className="text-sm text-red-600 mt-1">{errors.prefix}</p>}
           </div>
 
           {/* Full Name */}
@@ -167,9 +154,7 @@ export function SignupForm() {
               value={form.fullName}
               onChange={handleChange}
             />
-            {errors.fullName && (
-              <p className="text-sm text-red-600 mt-1">{errors.fullName}</p>
-            )}
+            {errors.fullName && <p className="text-sm text-red-600 mt-1">{errors.fullName}</p>}
           </div>
 
           {/* Email */}
@@ -185,9 +170,7 @@ export function SignupForm() {
               value={form.email}
               onChange={handleChange}
             />
-            {errors.email && (
-              <p className="text-sm text-red-600 mt-1">{errors.email}</p>
-            )}
+            {errors.email && <p className="text-sm text-red-600 mt-1">{errors.email}</p>}
           </div>
 
           {/* Mobile */}
@@ -202,12 +185,10 @@ export function SignupForm() {
               value={form.mobile}
               onChange={handleChange}
             />
-            {errors.mobile && (
-              <p className="text-sm text-red-600 mt-1">{errors.mobile}</p>
-            )}
+            {errors.mobile && <p className="text-sm text-red-600 mt-1">{errors.mobile}</p>}
           </div>
 
-          {/* Country Dropdown */}
+          {/* Country */}
           <div>
             <label htmlFor="country" className="mb-1 text-black">
               Country <span className="text-red-500">*</span>
@@ -232,26 +213,25 @@ export function SignupForm() {
               <option value="China">China</option>
               <option value="Brazil">Brazil</option>
             </select>
-            {errors.country && (
-              <p className="text-sm text-red-600 mt-1">{errors.country}</p>
-            )}
+            {errors.country && <p className="text-sm text-red-600 mt-1">{errors.country}</p>}
           </div>
 
-          {/* Password */}
+          {/* Qualification or Affiliation (Single Field) */}
           <div>
-            <label htmlFor="password" className="mb-1 text-black">
-              Password <span className="text-red-500">*</span>
+            <label htmlFor="qualificationOrAffiliation" className="mb-1 text-black">
+              Qualification / Affiliation <span className="text-red-500">*</span>
             </label>
             <Input
-              id="password"
-              type="password"
-              placeholder="Enter password"
+              id="qualificationOrAffiliation"
+              placeholder="Enter Qualification or Affiliation details"
               className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-400 outline-none bg-white"
-              value={form.password}
+              value={form.qualificationOrAffiliation}
               onChange={handleChange}
             />
-            {errors.password && (
-              <p className="text-sm text-red-600 mt-1">{errors.password}</p>
+            {errors.qualificationOrAffiliation && (
+              <p className="text-sm text-red-600 mt-1">
+                {errors.qualificationOrAffiliation}
+              </p>
             )}
           </div>
 
