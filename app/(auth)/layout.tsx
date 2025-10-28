@@ -25,11 +25,11 @@ export default function AuthLayout({ children }: { children: React.ReactNode }) 
         {/* Stats Section */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-10 px-6">
           {/* Card 1 - USI Webniars */}
-          <div className="bg-white/40 rounded-xl p-6 w-60 flex flex-col items-center backdrop-blur-sm">
+          <div className="bg-white/40 rounded-xl p-6 w-80 flex flex-col items-center backdrop-blur-sm">
             <Image
               src="/login-calender.png"
               alt="Events"
-              width={130}
+              width={150}
               height={130}
               className="mb-3"
             />
@@ -38,11 +38,11 @@ export default function AuthLayout({ children }: { children: React.ReactNode }) 
           </div>
 
           {/* Card 2 - Smart Learning Program */}
-          <div className="bg-white/40 rounded-xl p-6 w-60 flex flex-col items-center backdrop-blur-sm">
+          <div className="bg-white/40 rounded-xl p-6 w-80 flex flex-col items-center backdrop-blur-sm">
             <Image
               src="/login-mic.png"
               alt="Talks"
-              width={130}
+              width={150}
               height={130}
               className="mb-3"
             />
@@ -51,11 +51,11 @@ export default function AuthLayout({ children }: { children: React.ReactNode }) 
           </div>
 
           {/* Card 3 - Past Operative Workshops */}
-          <div className="bg-white/40 rounded-xl p-6 w-60 flex flex-col items-center backdrop-blur-sm">
+          <div className="bg-white/40 rounded-xl p-6 w-80 flex flex-col items-center backdrop-blur-sm">
             <Image
               src="/login-speaker.png"
               alt="Speakers"
-              width={130}
+              width={150}
               height={130}
               className="mb-3"
             />
@@ -64,11 +64,11 @@ export default function AuthLayout({ children }: { children: React.ReactNode }) 
           </div>
 
           {/* Card 4 - Mock Ups */}
-          <div className="bg-white/40 rounded-xl p-6 w-60 flex flex-col items-center backdrop-blur-sm">
+          <div className="bg-white/40 rounded-xl p-6 w-80 flex flex-col items-center backdrop-blur-sm">
             <Image
               src="/login-speaker.png"
               alt="Speakers"
-              width={130}
+              width={150}
               height={130}
               className="mb-3"
             />
