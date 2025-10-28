@@ -12,8 +12,9 @@ type FormData = {
   fullName: string;
   email: string;
   mobile: string;
-  country: string;
   qualificationOrAffiliation: string;
+  country: string;
+  
 };
 
 type FormErrors = Partial<Record<keyof FormData, string>>;
@@ -26,8 +27,9 @@ export function SignupForm() {
     fullName: "",
     email: "",
     mobile: "",
-    country: "",
     qualificationOrAffiliation: "",
+    country: "",
+    
   });
 
   const [agree, setAgree] = useState(false);
@@ -64,11 +66,11 @@ export function SignupForm() {
     else if (!/^[6-9]\d{9}$/.test(form.mobile))
       newErrors.mobile = "Enter a valid 10-digit mobile number.";
 
-    if (!form.country.trim()) newErrors.country = "Country is required.";
-
     if (!form.qualificationOrAffiliation.trim())
       newErrors.qualificationOrAffiliation =
         "Qualification or Affiliation details are required.";
+
+    if (!form.country.trim()) newErrors.country = "Country is required.";
 
     return newErrors;
   };
@@ -186,35 +188,7 @@ export function SignupForm() {
               onChange={handleChange}
             />
             {errors.mobile && <p className="text-sm text-red-600 mt-1">{errors.mobile}</p>}
-          </div>
-
-          {/* Country */}
-          <div>
-            <label htmlFor="country" className="mb-1 text-black">
-              Country <span className="text-red-500">*</span>
-            </label>
-            <select
-              id="country"
-              value={form.country}
-              onChange={(e) =>
-                setForm((prev) => ({ ...prev, country: e.target.value }))
-              }
-              className="w-72 px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-400 outline-none bg-white text-gray-600"
-            >
-              <option value="">-select-</option>
-              <option value="India">India</option>
-              <option value="United States">United States</option>
-              <option value="United Kingdom">United Kingdom</option>
-              <option value="Canada">Canada</option>
-              <option value="Australia">Australia</option>
-              <option value="Germany">Germany</option>
-              <option value="France">France</option>
-              <option value="Japan">Japan</option>
-              <option value="China">China</option>
-              <option value="Brazil">Brazil</option>
-            </select>
-            {errors.country && <p className="text-sm text-red-600 mt-1">{errors.country}</p>}
-          </div>
+          </div> 
 
           {/* Qualification or Affiliation (Single Field) */}
           <div>
@@ -234,6 +208,36 @@ export function SignupForm() {
               </p>
             )}
           </div>
+
+          {/* Country */}
+          <div>
+            <label htmlFor="country" className="mb-1 text-black">
+              Country <span className="text-red-500">*</span>
+            </label>
+            <select
+              id="country"
+              value={form.country}
+              onChange={(e) =>
+                setForm((prev) => ({ ...prev, country: e.target.value }))
+              }
+              className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-orange-400 outline-none bg-white text-gray-700"
+            >
+              <option value="">-select-</option>
+              <option value="India">India</option>
+              <option value="United States">United States</option>
+              <option value="United Kingdom">United Kingdom</option>
+              <option value="Canada">Canada</option>
+              <option value="Australia">Australia</option>
+              <option value="Germany">Germany</option>
+              <option value="France">France</option>
+              <option value="Japan">Japan</option>
+              <option value="China">China</option>
+              <option value="Brazil">Brazil</option>
+            </select>
+            {errors.country && <p className="text-sm text-red-600 mt-1">{errors.country}</p>}
+          </div>
+
+          
 
           {/* reCAPTCHA */}
           <div>
