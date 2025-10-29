@@ -33,7 +33,7 @@ export default function AuthLayout({ children }: { children: React.ReactNode }) 
               height={130}
               className="mb-3"
             />
-            <p className="text-xl font-bold text-[#1F5C9E]">USI Webniars</p>
+            <p className="text-xl font-bold text-[#1F5C9E]">USI Webinars</p>
             <p className="text-2xl font-bold text-[#007AFF]">20</p>
           </div>
 
@@ -46,7 +46,7 @@ export default function AuthLayout({ children }: { children: React.ReactNode }) 
               height={130}
               className="mb-3"
             />
-            <p className="text-xl font-bold text-[#1F5C9E]">Smart Learning Program</p>
+            <p className="text-xl font-bold text-[#1F5C9E]">e-Learning Courses</p>
             <p className="text-2xl font-bold text-[#007AFF]">200</p>
           </div>
 
@@ -59,7 +59,7 @@ export default function AuthLayout({ children }: { children: React.ReactNode }) 
               height={130}
               className="mb-3"
             />
-            <p className="text-xl font-bold text-[#1F5C9E]">Past Operative Workshops</p>
+            <p className="text-xl font-bold text-[#1F5C9E]">Live Operative Workshops</p>
             <p className="text-2xl font-bold text-[#007AFF]">40</p>
           </div>
 
@@ -72,7 +72,7 @@ export default function AuthLayout({ children }: { children: React.ReactNode }) 
               height={130}
               className="mb-3"
             />
-            <p className="text-xl font-bold text-[#1F5C9E]">Mock Ups</p>
+            <p className="text-xl font-bold text-[#1F5C9E]">Conferences</p>
             <p className="text-2xl font-bold text-[#007AFF]">40</p>
           </div>
 
