@@ -37,7 +37,7 @@ export default function AuthLayout({ children }: { children: React.ReactNode }) 
             <p className="text-2xl font-bold text-[#007AFF]">20</p>
           </div>
 
-          {/* Card 2 - Smart Learning Program */}
+          {/* Card 2 - e-Learning Courses */}
           <div className="bg-white/40 rounded-xl p-6 w-80 flex flex-col items-center backdrop-blur-sm">
             <Image
               src="/login-mic.png"
@@ -50,7 +50,7 @@ export default function AuthLayout({ children }: { children: React.ReactNode }) 
             <p className="text-2xl font-bold text-[#007AFF]">200</p>
           </div>
 
-          {/* Card 3 - Past Operative Workshops */}
+          {/* Card 3 - Live Operative Workshops */}
           <div className="bg-white/40 rounded-xl p-6 w-80 flex flex-col items-center backdrop-blur-sm">
             <Image
               src="/login-speaker.png"
@@ -63,7 +63,7 @@ export default function AuthLayout({ children }: { children: React.ReactNode }) 
             <p className="text-2xl font-bold text-[#007AFF]">40</p>
           </div>
 
-          {/* Card 4 - Mock Ups */}
+          {/* Card 4 - Conferences */}
           <div className="bg-white/40 rounded-xl p-6 w-80 flex flex-col items-center backdrop-blur-sm">
             <Image
               src="/login-speaker.png"
