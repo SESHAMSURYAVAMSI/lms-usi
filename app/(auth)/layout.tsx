@@ -12,70 +12,97 @@ export default function AuthLayout({ children }: { children: React.ReactNode }) 
       {/* Header Section */}
       <header className="w-full py-10 flex flex-col items-center">
         {/* Logo & Title */}
-        <div className="flex flex-col items-center justify-center space-y-3 mb-4">
-          <Image
-            src="/urological.png"
-            alt="Urological Society of India"
-            width={200}
-            height={20}
-            className="mb-2"
-          />
+        <div className="flex flex-col items-center justify-center space-y-3 mb-6">
+          <div className="flex items-center justify-center gap-4 flex-wrap text-center">
+            {/* USI Logo */}
+            <Image
+              src="/urological.png"
+              alt="Urological Society of India"
+              width={180}
+              height={20}
+              className="mb-2"
+            />
+            {/* Indian School of Urology Logo */}
+            <Image
+              src="/ISU_Logo.png"
+              alt="Indian School of Urology"
+              width={60}
+              height={20}
+              className="mb-2"
+            />
+            {/* Text beside logo */}
+            <p className="text-lg sm:text-xl font-bold text-[#1F5C9E] leading-tight">
+              Indian School <br /> of Urology
+            </p>
+          </div>
         </div>
 
         {/* Stats Section */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-10 px-6">
-          {/* Card 1 - USI Webniars */}
-          <div className="bg-white/40 rounded-xl p-6 w-80 flex flex-col items-center backdrop-blur-sm">
+        <div className="flex flex-wrap justify-center gap-6 px-6">
+          {/* Card 1 - USI Webinars */}
+          <div className="bg-white/40 rounded-xl p-4 w-60 h-56 flex flex-col items-center justify-between backdrop-blur-sm">
             <Image
               src="/login-calender.png"
               alt="Events"
-              width={150}
-              height={130}
-              className="mb-3"
+              width={100}
+              height={100}
+              className="mb-2"
             />
-            <p className="text-xl font-bold text-[#1F5C9E]">USI Webinars</p>
-            <p className="text-2xl font-bold text-[#007AFF]">20</p>
+            <p className="text-lg font-bold text-[#1F5C9E]">USI Webinars</p>
+            <p className="text-xl font-bold text-[#007AFF]">20</p>
           </div>
 
-          {/* Card 2 - e-Learning Courses */}
-          <div className="bg-white/40 rounded-xl p-6 w-80 flex flex-col items-center backdrop-blur-sm">
+          {/* Card 2 - Smart Learning Program */}
+          <div className="bg-white/40 rounded-xl p-4 w-60 h-56 flex flex-col items-center justify-between backdrop-blur-sm">
             <Image
-              src="/login-mic.png"
-              alt="Talks"
-              width={150}
-              height={130}
-              className="mb-3"
+              src="/login-calender.png"
+              alt="Smart Learning"
+              width={100}
+              height={100}
+              className="mb-2"
             />
-            <p className="text-xl font-bold text-[#1F5C9E]">e-Learning Courses</p>
-            <p className="text-2xl font-bold text-[#007AFF]">200</p>
+            <p className="text-lg font-bold text-[#1F5C9E]">Smart Learning Program</p>
+            <p className="text-xl font-bold text-[#007AFF]">200</p>
           </div>
 
           {/* Card 3 - Live Operative Workshops */}
-          <div className="bg-white/40 rounded-xl p-6 w-80 flex flex-col items-center backdrop-blur-sm">
+          <div className="bg-white/40 rounded-xl p-4 w-60 h-56 flex flex-col items-center justify-between backdrop-blur-sm">
             <Image
               src="/login-speaker.png"
-              alt="Speakers"
-              width={150}
-              height={130}
-              className="mb-3"
+              alt="Workshops"
+              width={100}
+              height={100}
+              className="mb-2"
             />
-            <p className="text-xl font-bold text-[#1F5C9E]">Live Operative Workshops</p>
-            <p className="text-2xl font-bold text-[#007AFF]">40</p>
+            <p className="text-lg font-bold text-[#1F5C9E]">Live Operative Workshops</p>
+            <p className="text-xl font-bold text-[#007AFF]">200</p>
           </div>
 
-          {/* Card 4 - Conferences */}
-          <div className="bg-white/40 rounded-xl p-6 w-80 flex flex-col items-center backdrop-blur-sm">
+          {/* Card 4 - e-Learning Courses */}
+          <div className="bg-white/40 rounded-xl p-4 w-60 h-56 flex flex-col items-center justify-between backdrop-blur-sm">
+            <Image
+              src="/login-mic.png"
+              alt="e-Learning"
+              width={100}
+              height={100}
+              className="mb-2"
+            />
+            <p className="text-lg font-bold text-[#1F5C9E]">e-Learning Courses</p>
+            <p className="text-xl font-bold text-[#007AFF]">40</p>
+          </div>
+
+          {/* Card 5 - Live Conferences */}
+          <div className="bg-white/40 rounded-xl p-4 w-60 h-56 flex flex-col items-center justify-between backdrop-blur-sm">
             <Image
               src="/login-speaker.png"
-              alt="Speakers"
-              width={150}
-              height={130}
-              className="mb-3"
+              alt="Conferences"
+              width={100}
+              height={100}
+              className="mb-2"
             />
-            <p className="text-xl font-bold text-[#1F5C9E]">Conferences</p>
-            <p className="text-2xl font-bold text-[#007AFF]">40</p>
+            <p className="text-lg font-bold text-[#1F5C9E]">Live Conferences</p>
+            <p className="text-xl font-bold text-[#007AFF]">40</p>
           </div>
-
         </div>
       </header>
 

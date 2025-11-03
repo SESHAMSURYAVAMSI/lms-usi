@@ -6,13 +6,14 @@ import { motion } from "framer-motion";
 
 
 const menuItems = [
+  { label: "My Cources", path: "/dashboard/my cources", icon: "/icons/webinar.png" },
   { label: "Webinar", path: "/dashboard/webinar", icon: "/icons/webinar.png" },
-  { label: "eLearning Courses", path: "/dashboard/elearning", icon: "/icons/elearning.png" },
+  { label: "Smart Learning Program,", path: "/dashboard/program", icon: "/icons/events.png" }, 
   { label: "Live Operative Workshops", path: "/dashboard/workshops", icon: "/icons/workshop.png" },
-  { label: "Conferences", path: "/dashboard/conferences", icon: "/icons/conference.png" },
+  { label: "eLearning Courses", path: "/dashboard/elearning", icon: "/icons/elearning.png" },
+  { label: "Live Conferences", path: "/dashboard/conferences", icon: "/icons/conference.png" },
   { label: "Speakers", path: "/dashboard/speakers", icon: "/icons/speaker.png" },
   { label: "My Profile", path: "/dashboard/myprofile", icon: "/icons/my-profile.png" },
-  { label: "My Purchases", path: "/dashboard/mypurchase", icon: "/icons/my-purchases.png" },
 ];
 
 export default function Sidebar() {
