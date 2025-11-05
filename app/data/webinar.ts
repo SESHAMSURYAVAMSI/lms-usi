@@ -10,6 +10,7 @@ export const webinars = [
     image: "/images/learning.png",
     price: 0,
     popularity: 90,
+    description:"This webinar focuses on renal transplantation best practices and case studies.",
   },
   {
     id: 2,
@@ -22,6 +23,7 @@ export const webinars = [
     image: "/images/learning.png",
     price: 499,
     popularity: 120,
+    description:"This webinar focuses on renal transplantation best practices and case studies."
   },
   {
     id: 3,
@@ -34,5 +36,6 @@ export const webinars = [
     image: "/images/learning.png",
     price: 0,
     popularity: 60,
+    description:"This webinar focuses on renal transplantation best practices and case studies."
   },
 ];
