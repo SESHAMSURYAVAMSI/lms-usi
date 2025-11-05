@@ -31,7 +31,7 @@ export default function AuthLayout({ children }: { children: React.ReactNode }) 
               className="mb-2"
             />
             {/* Text beside logo */}
-            <p className="text-lg sm:text-xl font-bold text-[#1F5C9E] leading-tight">
+            <p className="text-medium sm:text-xl font-bold text-[#07288C] leading-tight">
               Indian School <br /> of Urology
             </p>
           </div>
@@ -42,7 +42,7 @@ export default function AuthLayout({ children }: { children: React.ReactNode }) 
           {/* Card 1 - USI Webinars */}
           <div className="bg-white/40 rounded-xl p-4 w-60 h-56 flex flex-col items-center justify-between backdrop-blur-sm">
             <Image
-              src="/login-calender.png"
+              src="/usiw.png"
               alt="Events"
               width={100}
               height={100}
@@ -55,20 +55,20 @@ export default function AuthLayout({ children }: { children: React.ReactNode }) 
           {/* Card 2 - Smart Learning Program */}
           <div className="bg-white/40 rounded-xl p-4 w-60 h-56 flex flex-col items-center justify-between backdrop-blur-sm">
             <Image
-              src="/login-calender.png"
+              src="/slc.png"
               alt="Smart Learning"
               width={100}
               height={100}
               className="mb-2"
             />
-            <p className="text-lg font-bold text-[#1F5C9E]">Smart Learning Program</p>
+            <p className="text-lg font-bold text-[#1F5C9E]">Smart Learning Courses</p>
             <p className="text-xl font-bold text-[#007AFF]">200</p>
           </div>
 
           {/* Card 3 - Live Operative Workshops */}
           <div className="bg-white/40 rounded-xl p-4 w-60 h-56 flex flex-col items-center justify-between backdrop-blur-sm">
             <Image
-              src="/login-speaker.png"
+              src="/low.png"
               alt="Workshops"
               width={100}
               height={100}
@@ -81,13 +81,13 @@ export default function AuthLayout({ children }: { children: React.ReactNode }) 
           {/* Card 4 - e-Learning Courses */}
           <div className="bg-white/40 rounded-xl p-4 w-60 h-56 flex flex-col items-center justify-between backdrop-blur-sm">
             <Image
-              src="/login-mic.png"
+              src="/elp.png"
               alt="e-Learning"
               width={100}
               height={100}
               className="mb-2"
             />
-            <p className="text-lg font-bold text-[#1F5C9E]">e-Learning Courses</p>
+            <p className="text-lg font-bold text-[#1F5C9E]">e-Learning Program</p>
             <p className="text-xl font-bold text-[#007AFF]">40</p>
           </div>
 

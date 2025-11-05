@@ -6,9 +6,9 @@ import { motion } from "framer-motion";
 
 
 const menuItems = [
-  { label: "My Cources", path: "/dashboard/my cources", icon: "/icons/webinar.png" },
+  { label: "My Learning", path: "/dashboard/mylearning", icon: "/icons/my_learning.png" },
   { label: "Webinar", path: "/dashboard/webinar", icon: "/icons/webinar.png" },
-  { label: "Smart Learning Program,", path: "/dashboard/program", icon: "/icons/events.png" }, 
+  { label: "Smart Learning Program", path: "/dashboard/program", icon: "/icons/events.png" }, 
   { label: "Live Operative Workshops", path: "/dashboard/workshops", icon: "/icons/workshop.png" },
   { label: "eLearning Courses", path: "/dashboard/elearning", icon: "/icons/elearning.png" },
   { label: "Live Conferences", path: "/dashboard/conferences", icon: "/icons/conference.png" },

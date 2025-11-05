@@ -12,13 +12,15 @@ type FormData = {
   fullName: string;
   email: string;
   mobile: string;
-  qualificationOrAffiliation: string;
+  qualification: string;
+  affiliation: string;
   country: string;
-  
 };
 
 type FormErrors = Partial<Record<keyof FormData, string>>;
-const BACKEND_BASE_URL = process.env.NEXT_PUBLIC_BACKEND_BASE_URL || "http://localhost:5000";
+
+const BACKEND_BASE_URL =
+  process.env.NEXT_PUBLIC_BACKEND_BASE_URL || "http://localhost:5000";
 
 export function SignupForm() {
   const router = useRouter();
@@ -27,9 +29,9 @@ export function SignupForm() {
     fullName: "",
     email: "",
     mobile: "",
-    qualificationOrAffiliation: "",
+    qualification: "",
+    affiliation: "",
     country: "",
-    
   });
 
   const [agree, setAgree] = useState(false);
@@ -66,9 +68,11 @@ export function SignupForm() {
     else if (!/^[6-9]\d{9}$/.test(form.mobile))
       newErrors.mobile = "Enter a valid 10-digit mobile number.";
 
-    if (!form.qualificationOrAffiliation.trim())
-      newErrors.qualificationOrAffiliation =
-        "Qualification or Affiliation details are required.";
+    if (!form.qualification.trim())
+      newErrors.qualification = "Qualification is required.";
+
+    if (!form.affiliation.trim())
+      newErrors.affiliation = "Affiliation details are required.";
 
     if (!form.country.trim()) newErrors.country = "Country is required.";
 
@@ -141,7 +145,9 @@ export function SignupForm() {
               value={form.prefix}
               onChange={handleChange}
             />
-            {errors.prefix && <p className="text-sm text-red-600 mt-1">{errors.prefix}</p>}
+            {errors.prefix && (
+              <p className="text-sm text-red-600 mt-1">{errors.prefix}</p>
+            )}
           </div>
 
           {/* Full Name */}
@@ -156,7 +162,9 @@ export function SignupForm() {
               value={form.fullName}
               onChange={handleChange}
             />
-            {errors.fullName && <p className="text-sm text-red-600 mt-1">{errors.fullName}</p>}
+            {errors.fullName && (
+              <p className="text-sm text-red-600 mt-1">{errors.fullName}</p>
+            )}
           </div>
 
           {/* Email */}
@@ -172,7 +180,9 @@ export function SignupForm() {
               value={form.email}
               onChange={handleChange}
             />
-            {errors.email && <p className="text-sm text-red-600 mt-1">{errors.email}</p>}
+            {errors.email && (
+              <p className="text-sm text-red-600 mt-1">{errors.email}</p>
+            )}
           </div>
 
           {/* Mobile */}
@@ -187,25 +197,44 @@ export function SignupForm() {
               value={form.mobile}
               onChange={handleChange}
             />
-            {errors.mobile && <p className="text-sm text-red-600 mt-1">{errors.mobile}</p>}
-          </div> 
+            {errors.mobile && (
+              <p className="text-sm text-red-600 mt-1">{errors.mobile}</p>
+            )}
+          </div>
 
-          {/* Qualification or Affiliation (Single Field) */}
+          {/* Qualification */}
           <div>
-            <label htmlFor="qualificationOrAffiliation" className="mb-1 text-black">
-              Qualification / Affiliation <span className="text-red-500">*</span>
+            <label htmlFor="qualification" className="mb-1 text-black">
+              Qualification <span className="text-red-500">*</span>
             </label>
             <Input
-              id="qualificationOrAffiliation"
-              placeholder="Enter Qualification or Affiliation details"
+              id="qualification"
+              placeholder="Enter your qualification"
               className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-400 outline-none bg-white"
-              value={form.qualificationOrAffiliation}
+              value={form.qualification}
               onChange={handleChange}
             />
-            {errors.qualificationOrAffiliation && (
+            {errors.qualification && (
               <p className="text-sm text-red-600 mt-1">
-                {errors.qualificationOrAffiliation}
+                {errors.qualification}
               </p>
+            )}
+          </div>
+
+          {/* Affiliation */}
+          <div>
+            <label htmlFor="affiliation" className="mb-1 text-black">
+              Affiliation <span className="text-red-500">*</span>
+            </label>
+            <Input
+              id="affiliation"
+              placeholder="Enter your affiliation"
+              className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-400 outline-none bg-white"
+              value={form.affiliation}
+              onChange={handleChange}
+            />
+            {errors.affiliation && (
+              <p className="text-sm text-red-600 mt-1">{errors.affiliation}</p>
             )}
           </div>
 
@@ -234,10 +263,10 @@ export function SignupForm() {
               <option value="China">China</option>
               <option value="Brazil">Brazil</option>
             </select>
-            {errors.country && <p className="text-sm text-red-600 mt-1">{errors.country}</p>}
+            {errors.country && (
+              <p className="text-sm text-red-600 mt-1">{errors.country}</p>
+            )}
           </div>
-
-          
 
           {/* reCAPTCHA */}
           <div>

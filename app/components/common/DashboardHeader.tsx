@@ -11,7 +11,7 @@ const getImageUrl = (path: string | null | undefined): string => {
     if (path.startsWith("http")) return path;
     return `${process.env.NEXT_PUBLIC_BACKEND_BASE_URL || ""}${path}`;
   }
-  return "/profile.jpeg"; // Fallback if no photo is set
+  return "/profile.jpeg";
 };
 
 export default function DashboardHeader() {
@@ -27,29 +27,34 @@ export default function DashboardHeader() {
     <header className="fixed top-0 left-0 right-0 h-20 bg-gradient-to-r from-[#B5D9FF] to-[#D6E7FF] shadow-md flex items-center justify-between px-8 z-50">
       {/* Left Section: Logos */}
       <div
-        className="flex items-center gap-4 cursor-pointer"
+        className="flex items-center gap-1 cursor-pointer"
         onClick={() => router.push("/dashboard/events")}
       >
         {/* Urological Society of India Logo */}
         <Image
           src="/urological.png"
           alt="Urological Society of India"
-          width={170}
-          height={170}
+          width={160}
+          height={160}
           className="object-contain"
         />
 
-        {/* Indian School of Urology Logo */}
-        <Image
-          src="/ISU_Logo.png"
-          alt="Indian School of Urology"
-          width={60}
-          height={60}
-          className="object-contain"
-        />
-            <p className="text-m sm:text-l font-bold text-[#1F5C9E] leading-tight">
-              Indian School <br /> of Urology
-            </p>
+        {/* Vertical Separator */}
+        <div className="h-15 w-[1px] bg-[1F5C9E] rounded-full mx-18"></div>
+
+        {/* Indian School of Urology Logo + Text */}
+        <div className="flex items-center gap-2">
+          <Image
+            src="/ISU_Logo.png"
+            alt="Indian School of Urology"
+            width={55}
+            height={55}
+            className="object-contain"
+          />
+          <p className="text-base sm:text-sm font-bold text-[#1F5C9E] leading-tight">
+            Indian School  <br /> of Urology
+          </p>
+        </div>
       </div>
 
       {/* Right Section: Profile + Logout */}
